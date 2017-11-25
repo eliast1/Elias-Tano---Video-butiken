@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Uppgift6Avancerat.Models.Kunder>
+
+@{
+    ViewBag.Title = "OrderByName";
+}
+
+<h2>OrderByName</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Show All", "Index")
+    @Html.ActionLink("Order By Name", "OrderByName")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Namn)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Namn)
+            </td>
+            <!--
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Namn }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Namn }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Namn })
+            </td> -->
+        </tr>
+    }
+
+</table>
+
